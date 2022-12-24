@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ojds3J+Pn6ESkhZ1LSIo9Sn+SqRO0T9kGaIlhJAvqF1J6IdOLP1+BxndZTC7hwkB5p5QjW4MfXGWh0z2qzrCmQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\KÜBRA\\source\\repos\\UdemyDockerize\\AspNetCoreMvc\\AspNetCoreMvc.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\KÜBRA\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\KÜBRA\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
