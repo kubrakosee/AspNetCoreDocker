@@ -28,3 +28,28 @@
 	docker ps diyelim ilk 
 	docker rm f7b --force
 	force parametresiyle çalışsa bile proje silebiliyoruz
+
+	.NET CORE CLI NEDİR?
+		Siz bilgisayarınıza sdk kurduğunuz zaman aspnet core sdk kurduğunuz zaman
+		default olarak gelen bir komut satır arayüzüdür.Bu komut satır arayüzü
+		biz arkadaşlar core uygulamaları oluşturabilir var olan uygulamaları 
+		build işlemlerini gerçekleştirebilir publish işlemi gerçekleştirebilir,
+		dotnet clı komutu bilmem neden önemli dockerfile içerisinde publish edilmiş dosyanın yolunu veriyorduk
+		artık ben istiyorum ki publish edilme kısmını da ben dockerfile içerisinde 
+		gerçekleştireyim bir komut aracılığıyla ilk başta base image alıyordum
+		base image içinde komutlar çalıştırıyordum eğer ki ben runtime yerine sdk image
+		alırsam sdk image içinde dotnet cli kurulu şekilde geliyor o zaamn ben COPY bin/Release/netcoreapp3.1/publish .
+		burda DOTNET CLI komutları çalıştırabilirim yani powershell de yapmış olduklarımı
+		dotnet run,dotnet restore ben direk ilgili imagelarda çalıştırabilirim bana ne artısı var elle publish
+		etmek yerine publish edilen yeri vermek yerine publish edilme işlemi yapabilirim
+
+		yani benim kodlama süremi ciddi bir şekilde uygulamalarımzı ciddi bir şekilde
+		süresi azaltacaktır .Dockerfile üzerinden image oluşturabilmek için napmam 
+		gerekiyor mutlaka publish etmem gerekiyor yani ben bununla uğraşmıyım ben direk Copy
+		komutla gerçekleştireyim 
+
+
+
+
+
+
