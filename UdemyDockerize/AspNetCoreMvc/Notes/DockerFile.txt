@@ -1,2 +1,6 @@
 ﻿ASP.NET Core uygulamsını dockerize yapamk -2
 	dockerfile dosyasının oluşturulması
+
+	Dockerize image oluşturma 
+	docker build -t udemyaspcoremvc:v1 .
+	diyoruz.
