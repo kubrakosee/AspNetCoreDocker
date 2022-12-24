@@ -6,3 +6,5 @@
 /.vs
 /UdemyDockerize/AspNetCoreMvc/obj/Debug/netcoreapp3.1
 /UdemyDockerize/AspNetCoreMvc/obj/Release/netcoreapp3.1
+/UdemyDockerize/.vs/UdemyDockerize
+/UdemyDockerize/AspNetCoreMvc/bin/Debug/netcoreapp3.1
