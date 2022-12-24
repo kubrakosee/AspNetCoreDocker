@@ -1,0 +1,2 @@
+﻿ASP.NET Core uygulamsını dockerize yapamk -2
+	dockerfile dosyasının oluşturulması

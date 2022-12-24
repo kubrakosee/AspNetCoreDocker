@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Ojds3J+Pn6ESkhZ1LSIo9Sn+SqRO0T9kGaIlhJAvqF1J6IdOLP1+BxndZTC7hwkB5p5QjW4MfXGWh0z2qzrCmQ==",
+  "dgSpecHash": "vvFLc5TG3TtNptmx6XET0IUMYwPi2zD0//KEWDoYMXIx10lURuaIXWM0KGFBC7QFQprNTX8HIwEGbY4ZwzMgig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\KÜBRA\\source\\repos\\UdemyDockerize\\AspNetCoreMvc\\AspNetCoreMvc.csproj",
+  "projectFilePath": "C:\\Users\\KÜBRA\\Source\\Repos\\AspNetCoreDocker\\UdemyDockerize\\AspNetCoreMvc\\AspNetCoreMvc.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\KÜBRA\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\KÜBRA\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
     "C:\\Users\\KÜBRA\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512"
   ],
