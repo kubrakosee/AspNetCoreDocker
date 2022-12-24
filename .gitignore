@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/AspNetCoreDocker/v16/.suo
+/.vs
+/UdemyDockerize/AspNetCoreMvc/obj/Debug/netcoreapp3.1
+/UdemyDockerize/AspNetCoreMvc/obj/Release/netcoreapp3.1
