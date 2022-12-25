@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\KÜBRA\\Source\\Repos\\AspNetCoreDocker\\UdemyDockerize\\AspNetCoreMvc\\AspNetCoreMvc.csproj": {}
+    "C:\\Users\\KÜBRA\\source\\repos\\AspNetCoreDocker\\UdemyDockerize\\AspNetCoreMvc\\AspNetCoreMvc.csproj": {}
   },
   "projects": {
-    "C:\\Users\\KÜBRA\\Source\\Repos\\AspNetCoreDocker\\UdemyDockerize\\AspNetCoreMvc\\AspNetCoreMvc.csproj": {
+    "C:\\Users\\KÜBRA\\source\\repos\\AspNetCoreDocker\\UdemyDockerize\\AspNetCoreMvc\\AspNetCoreMvc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KÜBRA\\Source\\Repos\\AspNetCoreDocker\\UdemyDockerize\\AspNetCoreMvc\\AspNetCoreMvc.csproj",
+        "projectUniqueName": "C:\\Users\\KÜBRA\\source\\repos\\AspNetCoreDocker\\UdemyDockerize\\AspNetCoreMvc\\AspNetCoreMvc.csproj",
         "projectName": "AspNetCoreMvc",
-        "projectPath": "C:\\Users\\KÜBRA\\Source\\Repos\\AspNetCoreDocker\\UdemyDockerize\\AspNetCoreMvc\\AspNetCoreMvc.csproj",
+        "projectPath": "C:\\Users\\KÜBRA\\source\\repos\\AspNetCoreDocker\\UdemyDockerize\\AspNetCoreMvc\\AspNetCoreMvc.csproj",
         "packagesPath": "C:\\Users\\KÜBRA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KÜBRA\\Source\\Repos\\AspNetCoreDocker\\UdemyDockerize\\AspNetCoreMvc\\obj\\",
+        "outputPath": "C:\\Users\\KÜBRA\\source\\repos\\AspNetCoreDocker\\UdemyDockerize\\AspNetCoreMvc\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

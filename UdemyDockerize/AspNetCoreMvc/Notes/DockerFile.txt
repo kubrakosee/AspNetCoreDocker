@@ -48,6 +48,41 @@
 		gerekiyor mutlaka publish etmem gerekiyor yani ben bununla uğraşmıyım ben direk Copy
 		komutla gerçekleştireyim 
 
+		ASP.NET CORE UYGULAMASINI DOCKERİZE YAPMAK
+		(NET CORE CLI)-5
+
+		FROM mcr.microsoft.com/dotnet/sdk:3.1
+WORKDIR /app
+COPY . .
+RUN dotnet restore
+RUN dotnet publish AspNetCoreMvc.csproj -c Release -o out
+WORKDIR out
+ENV ASPNETCORE_URLS="http://*:4500"//burda * olmasının sebebi canlı ya çıkıldığı 
+zaman localhost ile çıkılmadığı için bu şekilde yapıldı
+ENTRYPOINT ["dotnet","AspNetCoreMvc.dll"]
+Bu şekilde dockerfile dosyamızı değiştiriyoruz.
+powershell de images dosyasını görmek için
+docker images diyoruz
+image oluşturmak için 
+docker build -t udemyaspcoremvc:v1 diyoruz 
+
+docker image kontrol edelim oluşmuş mu
+docker images diyoruz tekrar
+containerımı oluşturmak için ise
+docker run -p 5000:4500 --name mycon1 5d1
+diyoruz 
+sonra bir tane daha container oluşturup çalıştıralım 
+docker run -p 5001:4500 --name mycon2 5d1
+diyoruz
+bütün container ları görmek için 
+docker ps 
+diyoruz
+docker containerlari silebilmek için 
+docker rm 122 bd1 --force 
+diyoruz force silmeye zorla diyoruz
+docker ps diyip bakıyoruz containerlarımız silinmiş
+docker images dediğimizde udemyaspcoremvc image ı mız duruyor.
+
 
 
 
