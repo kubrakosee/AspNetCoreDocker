@@ -166,6 +166,29 @@ datasını aldıktan sonra sıfır bir image üzerinden
 kodlamanıza devam edin bu saye de imageların boyutunu ciddi 
 şekilde küçültmüş olucaksınız.
 
+DOCKERIGNORE DOSYASI OLUŞTURMAK
+	dockerignore dosyası ne işe yarıyor biz dockerfile
+	içerisinde kopyalama komutları yazdığımız zaman
+	yani bizim projemizde image içerisinde klasöre kopyalama
+	işlemi gerçekleştiğinde dockera biz şunu söylebiliyoruz.
+	şu klasör ve şu dosyaları kesinlikle image içerisine
+	kopyalama diyebiliyoruz işte bunu diyebilmemiz için projemizin
+	root içerine dockerignore dosyası oluşturma bin ve obj nin taşınmasına kopyalanmasına
+	gerek yok.Open file diyip dockerfile nerdeyse onun tarafa
+	.dockerignore diye txt açıyoruz alttaki kodları yazıyoruz.
+
+	**/bin/
+//çift yıldız benim tüm klasörlerimi ara bunun içerisinde bin klasörü varsa
+bu klasörü kopyalama
+**/obj/
+**/Dockerfile*
+**/.dockerignore*
+//burdaki arakadaşlar taşınmasın
+
+Dockerfile daki 
+COPY . . buraki kopyalama işleminde dockerignore dışında kalan dosyaları kopyalayacak
+
+
 
 
 
