@@ -83,6 +83,93 @@ diyoruz force silmeye zorla diyoruz
 docker ps diyip bakıyoruz containerlarımız silinmiş
 docker images dediğimizde udemyaspcoremvc image ı mız duruyor.
 
+DOCKER MULTISTAGE BUİLD 
+		multistage şu anlama geliyor dockerfile içerisinde
+		uygulamanızı inşa ederken bir tane base image dan
+		birden fazla base  imagedan faydalanıyorsanız bunun adına 
+		multistage deniyor.Peki neden dockerfile içerisinde ben  2 tane
+		base image kullanıyım.neden kullanmak zorunda olduğumuzu açıklayalım
+		Bir önceki dersimizde yani (-5) yeni image mı sdk image mından yani base
+		olarak sdk imagedan oluşturmuştuk şimdi dikkat ederseniz sdk sahip olan image'ım
+		715 mb ken benim sdk image içermeyen aspnetcore uygulamamın çalıştıracak ortam
+		olan yani sadece aspnetcore runtime içeren image'ın 212 mb yaklaşıkm 3.5 katı
+		benim burda optimasyon yapmam lazım image mın boyutunu çok fazla büyüdü
+		ve image ne kadar küçükse container ayağa kaldırmanız bir image ı bir yerden 
+		bir yere taşımanız o kadar kolay olur.var olan image nın bıyutunu küçültmek için 
+		multistage dediğimiz birden fazla image dan faydalanacağım peki nasıl
+		faydanacağız hemen bakalım dockerfile dosyasına gel
+		FROM mcr.microsoft.com/dotnet/sdk:3.1 buna ihtiyacım artık yok çünkü
+		elimde publish edilmiş bir tane datam var.tek yapmam gereken publish edilmiş
+		exe yi yani dll çalıştırmak o zaman ben 2.iamge dan yararlanıyım
+		ENTRYPOINT ["dotnet","AspNetCoreMvc.dll"] sadece burdaki uygulamamı 
+		çalıştıracak image'm olsun birden fazla image dan yararlanıyorsa buna multistage
+		deniliyor
+
+		FROM mcr.microsoft.com/dotnet/sdk:3.1 as build 
+#benim publish edilmiş datam burda from da -as build'le takma isim veriyoruz
+WORKDIR /app
+
+COPY . .
+
+RUN dotnet restore
+RUN dotnet publish AspNetCoreMvc.csproj -c Release -o out
+
+
+FROM  mcr.microsoft.com/dotnet/aspnet
+WORKDIR /app
+COPY --from build /app/out .
+#copy de dediğim al benim build image ı al app klasörün içindeki out klasörün içindeki
+#publish edilmiş data mı al diyorum
+#WORKDIR out
+#WORKDIR out olan çalışma dosyamı burda belli etmeme gerek yok o yüzden kaldırıyoruz
+ENV ASPNETCORE_URLS="http://*:4500"
+ENTRYPOINT ["dotnet","AspNetCoreMvc.dll"]
+
+#//sdk 
+		#app
+			#out
+				#publish data buraki publish edilmiş data yı benim yeni 
+				#image ma taşımam lazım
+
+
+FROM mcr.microsoft.com/dotnet/sdk:3.1 as build 
+WORKDIR /app
+
+COPY *.csproj .
+RUN dotnet restore
+
+COPY . .
+#//cash de belletip kopyalayacak ordaki dosyaları kullanıcak
+#eğer ben css dosyasına yeni bir css ekledim COPY *.csproj .
+#RUN dotnet restore bunları cacheden okuyacak öteki copy yeniden oluşturucak
+RUN dotnet restore
+RUN dotnet publish AspNetCoreMvc.csproj -c Release -o out
+
+
+FROM  mcr.microsoft.com/dotnet/aspnet
+WORKDIR /app
+COPY --from build /app/out .
+ENV ASPNETCORE_URLS="http://*:4500"
+ENTRYPOINT ["dotnet","AspNetCoreMvc.dll"]
+
+sonra powershelle gel docker images
+de
+sonra 
+docker build -t udemyaspcoremvc:v3 . diyoruz
+ve oluşturduktan sonra image ın 
+docker images diyip image ın boyutuna bakalım 212 mb 
+olduğunu görüyoruz.
+NOT:sdk komutu sadece dotnet clı için çalıştırmak için kullanın
+PUBLİSH DİR ,RUNDIR veya farklı bir dotnet cli komutudur
+bu komutlarla işiniz bittiği zaman uygulamaınızın publish edilmiş
+datasını aldıktan sonra sıfır bir image üzerinden
+kodlamanıza devam edin bu saye de imageların boyutunu ciddi 
+şekilde küçültmüş olucaksınız.
+
+
+
+
+
 
 
 
