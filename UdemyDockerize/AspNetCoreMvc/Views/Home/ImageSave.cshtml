@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Image Save";
+}
+
+<div class="text-center">
+    <h1 class="display-4">ImageSave</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<form asp-action="ImageSave" enctype="multipart/form-data" method="post">
+    <input type="file" name="imageFile" />
+    <button type="submit">Resim Kaydet</button>
+
+</form>

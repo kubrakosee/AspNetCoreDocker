@@ -188,6 +188,11 @@ bu klasörü kopyalama
 Dockerfile daki 
 COPY . . buraki kopyalama işleminde dockerignore dışında kalan dosyaları kopyalayacak
 
+DOCKER VOLUME 
+	ASP.NET CORE MVC PROJESİ-IMAGESAVE SAYFASI EKLEME
+	Kullanıcıdan almış olduğumuz resimleri kaydediceğiz
+	şimdi HomeController kısmına gel
+    //resim kaydediyorsan enctype="multipart/form-data"  bunun olması gerekir
 
 
 
