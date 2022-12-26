@@ -194,6 +194,18 @@ DOCKER VOLUME
 	şimdi HomeController kısmına gel
     //resim kaydediyorsan enctype="multipart/form-data"  bunun olması gerekir
 
+	DOCKER VOLUME
+	 ASP.NET CORE MVC PROJESİ-IMAGESHOW SAYFASI EKLEME
+		Kaydedilen resimleri göstericek basit bir sayfa düzenleyecğiz
+		Bu sayfayı da özellikle containerları ayağa kaldırdığımızda
+		bir containera ekelmiş olduğumuz resim diğer containerda görünüyormu
+		bunları daha rahat simüle edebilmek için böyle bir sayfa hazırlayacağız
+		startup.cs nin içine gelip bir tane servis yazacağız.Configureservices metodun 
+		içinde yapıcaz
+
+		@model IEnumerable<string>//burda HomeControllerda dönen verimiz ne string onu alalım
+		Ienumerable bu işe yarıyor
+		bir dizin geldiği için foreach ile dönmemiz lazım
 
 
 
