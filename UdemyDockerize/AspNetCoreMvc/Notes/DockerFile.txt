@@ -222,7 +222,23 @@ DOCKER VOLUME
 	  docker build --no-cache -t udemyaspcoremvc:v6 .
 	  docker run -d -p 5001:4500 --name mycon2 870
 
+	  --DOCKER VOLUME
+			Bind-mount
+			1)aşama masaütüne bir tane klasör oluştur adı images olsun
+			2)aşama docker setting ayaralarına gel Choose container terminal
+			System default seç 
+			3)aşama masaütündeki windows powershelli aç 
+			docker images 
+			 docker run -d -p 5000:4500 --name mycon1 --mount type=bind,source="C:\Users\KÜBRA\Desktop\images",target="/app/wwwroot/images" 66b
+			 yazıyoruz.
+			 bir tane daha container kaldıralım
 
+			 docker run -d -p 5001:4500 --name mycon2 --mount type=bind,source="C:\Users\KÜBRA\Desktop\images",target="/app/wwwroot/images" 66b
+			 diyoruz
+			 Not:buraki amaç benim solutiondaki imagesları kaydetmeyecek masaüstündekine resimleri kaydedicek ki her container açtığımda her localhostlar erişebilmesi
+			 için görebilsin resimleri bunu localhost 5000 de aynı resimleri görüp ekleyebiliyor aynı yere localhost 5001 de aynı işlemi yapıyor.Mesela 5001 portunda
+			 resim ekledim 5000 portuna gidip gördüğümde 5001 de eklediğim resimi de görebiliyorum 5000 de 
+			 bunu yapmadan bir önceki derse hangi localhost da resim eklediysem sadece o localhost görebiliyordu.5001 göremiyordu.
 
 
 
