@@ -67,7 +67,7 @@ namespace AspNetCoreMvc.Controllers
                 //burdaki şu şekilde gelicez örnek
                 //resim1.jpg sadece jpg kısmı alıcak.
 
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Images", fileName);
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
 
                 using (var stream = new FileStream(path, FileMode.Create))
                 {

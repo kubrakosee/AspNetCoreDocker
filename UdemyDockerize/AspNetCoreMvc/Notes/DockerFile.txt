@@ -208,8 +208,19 @@ DOCKER VOLUME
 		bir dizin geldiği için foreach ile dönmemiz lazım
 
 
+		DOCKER VOLUME
+	 ASP.NET CORE MVC PROJESİ-CONTAİNER SAYFASI EKLEME
+	 docker images
+	  docker build -t udemyaspcoremvc:v1 .
+	  container çalıştırma
+	  docker run -p 5000:4500 --name mycon1 9s5 yapıyoruz
 
-
+	  docker ps containerları listeleme
+	  containerları silme 
+	  docker rm 02e --force diyoruz
+	  sonra 
+	  docker build --no-cache -t udemyaspcoremvc:v6 .
+	  docker run -d -p 5001:4500 --name mycon2 870
 
 
 
