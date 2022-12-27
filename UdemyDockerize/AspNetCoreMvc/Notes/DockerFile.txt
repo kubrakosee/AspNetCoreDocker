@@ -240,5 +240,25 @@ DOCKER VOLUME
 			 resim ekledim 5000 portuna gidip gördüğümde 5001 de eklediğim resimi de görebiliyorum 5000 de 
 			 bunu yapmadan bir önceki derse hangi localhost da resim eklediysem sadece o localhost görebiliyordu.5001 göremiyordu.
 
+			 ------
+			  --DOCKER VOLUME
+			       VOLUME
+				   burda sistem üzerine işlem yapmaktansa cloud ortamda kaydetme işlemi yapılıyor
+				   docker volume create images yazıyoruz powershell e
+				    docker run -d -p 5000:4500 --name mycon -v images:/app/wwwroot/images 66b
+					yazıyoruz.
+					volume silme 
+					ilk önce containerları silelim
+					docker rm dcc 2d3 --force
+					sonra volume silelim
+					 docker volume rm images
+					 bu işlemde bu kadar
+					 kalıcı dosyalarımızı nasıl volume içerisinde
+					 kaydedebilirsiniz veya işletim sistemi üzerinde nasıl kaydedebilirsiniz
+					 bunları görmüş olduk.
+
+
+
+
 
 
