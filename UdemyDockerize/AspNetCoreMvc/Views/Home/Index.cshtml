@@ -1,6 +1,44 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@*projem development ortamda kalkıyorsa hemen environment içine yazılacak tag gözükücek
+    environmnetarı yazdıktan sonra ııs üzerinden çalıştır projeyi
+    birşey belirlemediğim halde development ortam yazısı geldi.Çalıştırdıktan sonra
+    gördün chrome geldiğini şimdi projeyi publish yap şimdi exe de görelim bakalım ne göreceğiz
+    environment ta production yazıyor şimdi localhost 5000 ile gir ortamın production
+    yazdığını göreceksin Demek ki siz uygulamanızı bir exe de çalıştırdınız zaman
+    yani bir sunucuda çalıştırdınız zaman ortam default olarak production oluyor
+    localde çalıştırdığınız zaman default olarak development oluyor.Peki bunu değiştirebilir miyim
+    yani ben bunucontainer içerisinde çalıştırdığım zaman ortamın nolucak default
+    olarak production olucak.Peki ben container içerisinde ortamı development olarak ortamı kalkdırabilir miyiz
+    evet gelin şimdi onu yapalım şimdi powershell açalım
+    iamgesları görelim docker images diyip tabi benim değişiklik yaptığım için benim
+    tekrar images oluşturmam lazım powershell i kapa projenin terminaline git
+    yeni image için docker build -t udemyaspcoremvc:v8 .
+    diyoruz.Bundan öncekinde environment belirtmediğimiz için bakalım ne gelecek
+    docker run --name mycon imagesın ıdsini yazıyorsunun ama potu belirtmeyi unuttuk
+    bir container durduralım
+    docker ps diyip şimdi container'ı silelim'
+    docker rm c56 --force diyoruz
+    ve docker run -p 5000:4500 --name mycon c9a diyip tekrar container çalıştırıyoruz
+    localhost 5000 ile çalıştırdığımız zaman ortam production geldiğini
+    görüyoruz.Production ortamımızı container da development yapalım
+    Buna neden ihtiyaç oluyor.Production ortamında bir hata alındığı
+    zaman hatanın detayını göremezsiniz.DEvelopment sa hatanı görebilirisn
+    Production ortam da hata alıyorsunuz daha loglama yapmamışsınız
+    eğer ben ortamımı development yaparsam hatanın neyden kaynaklığı olduğunu bulabilirim
+    Bazen canlı daki ortamımızı deelopment yapmamız gerekebilir.
+    Şimdi onu yapalım.Şimdi container ı tekrar silelim
+    docker run -p 5000:4500 --env ASPNETCORE_ENVIRONMENT=DEVELOPMENT --name mycon c9b
+    ve artık localhost 5000 ile girdiğimiz de development olduğunu görüyoruz.
+*@
+<environment names="Development">
+    <h1>Ortam:Development</h1>
+</environment>
+<environment names="Production">
+    <h1>Ortam:Production</h1>
+</environment>
+
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>

@@ -257,6 +257,28 @@ DOCKER VOLUME
 					 kaydedebilirsiniz veya işletim sistemi üzerinde nasıl kaydedebilirsiniz
 					 bunları görmüş olduk.
 
+		DOCKER ENVIRONMENT
+			----CONTAİNER İÇİN ENVİRONMENT BELİRLEME
+			Aspnet core tarafında bir uygulama oluşturduğumuz zaman default olarak
+			3 tane environment gelir.Bunlardan birisi product sın diğeri development
+			diğeri ise stage evresi siz istediğiniz sekilde bunlardan bir tanesiyle
+			uygulamanızı kaldırabilirsiniz.Peki bu evreler niin kullanıyor.Siz uygulamanızı 
+			her hangi bir environment belirtmezseniz uygulamanız product ın ortamda
+			ayağa kalkar.Uygulamanızı localhost ta ayağa kaldıracaksınız default olarak
+			development ta ayağa kalkmış oluyor.Bu environment ı containerı ayağa kaldırırkne
+			nasıl belirleriz ona bakalım.1)aşama ilk olarak projedeki environmentları görelim
+			sağ tıkla properties Debug ksımında Environment değişkeni var.İstedğiniz 
+			kadar environmnet ekleyebilirsiniz.projeniz hangi ortamda ayağa kaldırmak 
+			istiyorsanız o ortamı yani value den değiştirebilirsiniz.Biz ayarıyla oynamayacağız
+			şimdi test edelim.Index.cshtml e gel bu arada istediğiniz kadar ortam oluşturabilir
+			siniz.Index.cshtml de ortamımızı gösterelim ki daha anlaşılır olsun 
+
+
+
+
+
+
+
 
 
 
