@@ -274,6 +274,34 @@ DOCKER VOLUME
 			siniz.Index.cshtml de ortamımızı gösterelim ki daha anlaşılır olsun 
 
 
+			CONTAINER İÇİN ENVIRONMENT BELİRLEME-2
+				environmentları sadece ortam belirtmek için değil 
+				appsetting.json içerisinde de tanımlamış olduğumuz değşkenleride ezmek için
+				kullanıyoruz.apssettings.json a gel.Bizim sabit değişkenlerimiz varsa bunları genelde best .. nerde tutuyoruz.
+				appsetting.json içerisinde tutuyoruz.Örnek verirsek bir veritabanı yolunu tutabiliriz api key in vardır yada
+				tokenın vardır bu gibi sabit değişkenleri buradan verebilirisniz."MySqlCon": "Local Veritabanı Yolu", yazıyoruz
+				Development esnasında localde sql ile iletişime geçiyorum.Production ortama atınca napmam lazım bu sefer geliyorsun appsetting.json üzerine
+
+				ben bunu production için yapıcaksam development.json dosyayı kopyalayıp production.json olarak adını bu şekilde yapıyorum.
+				Prodction içine veritabanını tutmak pek güvenli değil "MySqlCon": "Uzak Sunucu  Veritabanı Yolu", böyle yazması iyi değil 
+				production bu değerleri belirlemek yerine ben uygulamamı ayağa kaldırırken environment olarak belirlersem uygulamamın güvenliğini
+				bir kat daha artırmış olurum.Yani container ayağa kaldırırken ben mysqlcon isimli değişken belirlersem artık production içerisinde bunu belirleme 
+				gerek kalmayacak.production.jsdon daki ni nasıl environment olarak belirleyebiliriz
+				ona bakalım.Öncelikli olarak environmentın okunduğunu görmek için production.json daki "MySqlCon": "Uzak Sunucu  Veritabanı Yolu",
+				siliyorum.
+				Environment daha üstündür.Şimdi powershelli aç tabi unutma her değişiklikte images oluşturman lazım.
+				sonra 
+				docker run -p 5000:4500 --env MySqlCon='Uzak sunucu veritabanı yolu' --name mycon c18 
+				sonra şöyle de yapabilrisn
+				docker run -p 5000:4500 --env ASPNETCORE_ENVIRONMENT=DEVELOPMENT --env MySqlCon='Uzak sunucu veritabanı yolu' --name mycon c18 
+				diyip development ortam da bile uzak masaütünü mySqlcon u bağlayabilirsin ben sürekli böyle yapmak yerine
+				dockerfile dosyasına gelip
+				ENV ASPNETCORE_ENVIRONMENT="DEVELOPMENT"
+				ENV MySqlCon="Uzak sunucu veritabanı yolu"
+				da diyebiliriz.
+
+
+
 
 
 

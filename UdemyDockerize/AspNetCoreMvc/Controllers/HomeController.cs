@@ -1,6 +1,7 @@
 ﻿using AspNetCoreMvc.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using System;
@@ -16,15 +17,18 @@ namespace AspNetCoreMvc.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IFileProvider _fileProvider;
+        private readonly IConfiguration _configuration;
 
-        public HomeController(ILogger<HomeController> logger,IFileProvider fileProvider)
+        public HomeController(ILogger<HomeController> logger,IFileProvider fileProvider,IConfiguration configuration)
         {
             _logger = logger;
-            _fileProvider = fileProvider; 
+            _fileProvider = fileProvider;
+            _configuration = configuration;
         }
 
         public IActionResult Index()
         {
+            ViewBag.MySqlCon = _configuration["MySqlCon"];
             return View();
         }
 
